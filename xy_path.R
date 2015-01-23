@@ -30,7 +30,14 @@ strain.1.speed$time <- c1
 ##make data wide
 library(reshape2)
 ##the following command caused R to crash... oops... not sure why yet...
-strain.1.wide <- dcast(strain.1.speed$speed, strain.1.speed$plate, strain.1.speed$x, strain.1.speed$y + strain.1.speed$ID ~ time, fun.aggregate = mean, value.var="strain.1.speed")
+##strain.1.wide <- dcast(strain.1.speed$speed, strain.1.speed$plate, strain.1.speed$x, strain.1.speed$y + strain.1.speed$ID ~ time, fun.aggregate = mean, value.var="strain.1.speed")
+##try writing the above code from scratch to take the average x, then do it again and make a separate dataset to make an average of y
+
+##make a dataframe only containing x, plate, ID and time
+##make a dataframe only containing y, plate, ID and time
+##use dcast() on both dataframes separately
+
+##strain.1.wide <- dcast(strain.1.speed, strain.1.plate + strain.1.ID ~ strain.1.time, fun.aggregate = mean, value.var="strain.1.speed")
 ##strain.1.subset <- strain.1.wide[,1078:1827] ##90s to 150s
 strain.1.subset <- strain.1.wide[,689:1078] ##60s to 90s
 strain.1.subset <- strain.1.subset[complete.cases(strain.1.subset), ]
