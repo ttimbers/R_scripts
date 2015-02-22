@@ -1,6 +1,6 @@
 ##Generates toy dataset to play around with clustering 
 
-##Function to create toy 3 dimensional dataset that will give you 2 very different clusters and one overlapping cluster
+##Function to create toy 3 dimensional dataset
 make.toy.data <- function(means, stdevs, N) {
   ##Returns a dataframe containing a 3D toy dataset 
   ##
