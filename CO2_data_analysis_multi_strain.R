@@ -1,5 +1,5 @@
 ##load MWT data
-setwd("enter path")
+##setwd("enter path")
 N2 <- read.table("merged.file")
 
 ##split up column V1 into identifier and time
